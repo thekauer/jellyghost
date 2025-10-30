@@ -7,7 +7,7 @@ interface PostProps {
 }
 
 function getImageLink(id: string) {
-  return `${process.env.APP_URL!}/api/posts/${id}`;
+  return `${process.env.NEXT_PUBLIC_APP_URL!}/api/posts/${id}`;
 }
 
 export function Post({ post }: PostProps) {

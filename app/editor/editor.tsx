@@ -381,7 +381,7 @@ export function PostButton() {
   const addPost = useMutation<{ images: string[]; md: string }>({
     mutationFn: async ({ images, md }) => {
       // TODO: env var
-      await fetch(`${process.env.APP_URL!}/api/posts`, {
+      await fetch(`${process.env.NEXT_PUBLIC_APP_URL!}/api/posts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

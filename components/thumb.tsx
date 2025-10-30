@@ -4,11 +4,11 @@ import { Post as PostType } from "@/db/post.repository";
 import { useRouter } from "next/navigation";
 
 function getImageLink(id: string) {
-  return `${process.env.APP_URL!}/api/posts/${id}`;
+  return `${process.env.NEXT_PUBLIC_APP_URL!}/api/posts/${id}`;
 }
 
 function getPostLink(id: string) {
-  return `${process.env.APP_URL!}/posts/${id}`;
+  return `${process.env.NEXT_PUBLIC_APP_URL!}/posts/${id}`;
 }
 
 interface ThumbProps {

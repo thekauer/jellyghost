@@ -7,12 +7,14 @@ import {
   DropdownTrigger,
 } from "@heroui/react";
 import { User as UserType } from "@/lib/user";
+import { useStackApp } from "@stackframe/stack";
 
 interface UserProps {
   user: UserType;
 }
 
 export function User({ user }: UserProps) {
+  const app = useStackApp();
   return (
     <Dropdown placement="bottom-end">
       <DropdownTrigger>
@@ -40,7 +42,7 @@ export function User({ user }: UserProps) {
         <DropdownItem key="configurations">Configurations</DropdownItem>
         <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
         <DropdownItem key="logout" color="danger">
-          Log Out
+          <a href={app.urls.signOut}>Log Out</a>
         </DropdownItem>
       </DropdownMenu>
     </Dropdown>
