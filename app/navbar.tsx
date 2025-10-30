@@ -12,7 +12,7 @@ import { User } from "./user";
 import { User as UserType } from "@/lib/user";
 
 interface NavbarProps {
-  user: UserType;
+  user: UserType | null;
 }
 
 export function NavbarComponent({ user }: NavbarProps) {
