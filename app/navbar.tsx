@@ -10,12 +10,14 @@ import {
 } from "@heroui/react";
 import { User } from "./user";
 import { User as UserType } from "@/lib/user";
+import { useStackApp } from "@stackframe/stack";
 
 interface NavbarProps {
   user: UserType | null;
 }
 
 export function NavbarComponent({ user }: NavbarProps) {
+  const app = useStackApp();
   return (
     <Navbar
       classNames={{
@@ -61,10 +63,15 @@ export function NavbarComponent({ user }: NavbarProps) {
         ) : (
           <>
             <NavbarItem className="hidden lg:flex">
-              <Link href="#">Login</Link>
+              <Link href={app.urls.signIn}>Login</Link>
             </NavbarItem>
             <NavbarItem>
-              <Button as={Link} color="primary" href="#" variant="flat">
+              <Button
+                as={Link}
+                color="primary"
+                href={app.urls.signIn}
+                variant="flat"
+              >
                 Sign Up
               </Button>
             </NavbarItem>
