@@ -22,7 +22,7 @@ export async function GET(
   }
   const buffer = post[0].originalImage as Buffer;
 
-  return new Response(buffer, {
+  return new Response(buffer as any, {
     status: 200,
     headers: {
       "Content-Type": "image/webp", // fixed since you know it's WebP

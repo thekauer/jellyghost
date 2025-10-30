@@ -3,13 +3,12 @@ import { Post as PostType } from "@/db/post.repository";
 
 import { useRouter } from "next/navigation";
 
-// TODO: env var
 function getImageLink(id: string) {
-  return `http://localhost:3001/api/posts/${id}`;
+  return `${process.env.APP_URL!}/api/posts/${id}`;
 }
 
 function getPostLink(id: string) {
-  return `http://localhost:3001/posts/${id}`;
+  return `${process.env.APP_URL!}/posts/${id}`;
 }
 
 interface ThumbProps {

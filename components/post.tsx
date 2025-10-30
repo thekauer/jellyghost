@@ -6,9 +6,8 @@ interface PostProps {
   post: PostType;
 }
 
-// TODO: env var
 function getImageLink(id: string) {
-  return `http://localhost:3001/api/posts/${id}`;
+  return `${process.env.APP_URL!}/api/posts/${id}`;
 }
 
 export function Post({ post }: PostProps) {

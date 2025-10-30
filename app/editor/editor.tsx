@@ -333,7 +333,7 @@ function AdvancedEditor() {
   const { handlers: imageHandlers } = useImageHandlers(commands, editor);
   const handleDrop: DragEventHandler<HTMLDivElement> = async (event) => {
     event.preventDefault();
-    const files = event.target.files || event.dataTransfer.files;
+    const files = (event.target as any).files || event.dataTransfer.files;
 
     const reader = new FileReader();
     reader.onload = function () {
@@ -381,7 +381,7 @@ export function PostButton() {
   const addPost = useMutation<{ images: string[]; md: string }>({
     mutationFn: async ({ images, md }) => {
       // TODO: env var
-      await fetch("http://localhost:3001/api/posts", {
+      await fetch(`${process.env.APP_URL!}/api/posts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
