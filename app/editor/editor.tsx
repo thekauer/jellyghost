@@ -400,7 +400,7 @@ export function PostButton() {
     startTransition(async () => {
       // await addPost.mutateAsync({ images, md });
 
-      await fetch("http://localhost:3001/api/posts", {
+      await fetch(`${process.env.NEXT_PUBLIC_APP_URL!}/api/posts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
